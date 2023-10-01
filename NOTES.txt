@@ -1,0 +1,108 @@
+CH 2.3
+In node, if you take a variable, then put a period and then press TAB, you will get a list of all the methods and properties available!
+(I didn't get that to work in chrome console, though) 
+
+CH 3.2
+Making a COPY (rather than just a reference) of an OBJECT in JS is tricky.
+
+To do it, we can do these things:
+
+USE THE SPREAD OPERATOR
+cat2 = { ...cat1 }
+
+JSON
+let cat3 = JSON.parse(JSON.stringify(cat1))
+
+OBJECT.ASSIGN
+let cat4 = Object.assign({},cat1)
+
+
+The Object.assign() static method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
+
+This last way works like this:
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// Expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget === target);
+// Expected output: true
+
+
+CH 3.7
+END
+Push: adds element to end of Array
+  counties.push("Dublin")
+Pop: takes element from end of Array.|
+  counties.pop()
+
+FRONT
+Unshift: adds to front of Array
+  counties.unshift("Monaghan")
+Shift: takes first item from Array
+  counties.shift()
+
+Note: these methods RETURN values, but they also MODIFY the original arrays
+
+TO REMOVE AN ELEMENT FROM MIDDLE OF Array
+splice(index, number of items to remove)
+counties.splice(2, 4)
+
+
+REGULAR EXPRESSIONS ==================
+Here are a bunch of strings....
+
+var string1 = "This is the longest string ever.";
+var string2 = "This is the shortest string ever.";
+var string3 = "Is this the thing called Mount Everest?";
+var string4 = "This is the Sherman on the Mount.";
+
+Here is our regular expression. Putting / / at front and back 
+creates a regular expression.
+var regex = /this/;
+
+With that variation, use its test method.
+Pass a string to the method and it will see if the regular 
+expression appears within the string.
+
+The only one here that returns TRUE is string3. The other 
+uses of the word "this" do not qualify because of case. However,
+in string three, there is a lower case THIS.
+
+regex.test(string1);
+regex.test(string2);
+regex.test(string3);
+regex.test(string4);
+
+Make it case insensitive. This will make all TRUE.
+regex = /this/i;
+
+Caret at beginning means match against the beginning of the string.
+So here, 1,2, and 4 will be true, because those sentences 
+start with the expression (this) we are looking for.
+
+regex = /^this/i;
+
+Putting a $ at end means test at the end of the string. 
+This will make all four FALSE.
+regex = /this$/i;
+
+This will return true for 1 & 2 because "ever" appears 
+at the end of the sentence. A DOT here means "any character",
+which includes the period, but not literally. 
+
+regex = /ever.$/i;
+
+This will return true for 1 & 2 because "ever." appears 
+at the end of the sentence. Here we have escaped the DOT, so 
+it means a literaly dot, not "any character".
+
+regex = /ever\.$/i;
+
+
+
+// More info:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
