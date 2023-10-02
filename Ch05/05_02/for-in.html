@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For In Loop Demo</title>
+</head>
+
+<body>
+  <script>
+    counties = ["fermanagh", "antrim", "down", "armagh", "(london)derry", "tyrone", "cavan", "carlow", "clare", "cork", "donegal", "dublin", "galway", "kerry", "kildare", "kilkenny", "laois", "lietrim", "limerick", "longford", "louth", "mayo", "meath", "monaghan", "offaly", "roscommon", "sligo", "tipperary", "waterford", "wexford", "westmeath", "wicklow"]
+
+    // NOTE with a for in, the order of keys is not always sequential.
+    // If you need sequential ordering, then use a plain for loop.
+    for (let c in counties) {
+      console.log(`County ${c} is ${counties[c]}.`)
+    }
+
+    // To just output the values without the indices, use FOR OF
+    for (let county of counties) {
+      console.log(county)
+    }
+  </script>
+</body>
+
+</html>
