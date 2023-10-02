@@ -125,3 +125,54 @@ switch (answer) {
     console.log("You rebel, you!");
     break;
 }
+
+
+
+
+
+TERNARY OPERATOR
+var animal = "cat"
+animal === "cat" ? console.log('You have a cat.') : console.log('You do not have a cat.')
+
+
+TYPE CHECKING
+
+var thing = "chicken"
+typeof thing
+
+hasOwnProperty method allows you to test if a variable has a particular property.
+
+So where is that useful? Imagine that you need to know is something is an object or an array.
+
+myArray = [] 
+If you do "typeof myArray", it will return OBJECT, because arrays are objects (with implicit keys ie the indices)
+
+So typeof thing === "object" && thing.hasOwnProperty('length')  would work.
+
+Here's why:
+we test if it's an object
+we test if it has a length property (which objects don't have).
+
+But why not just use the second test by itself? The reason is that strings also have length.
+
+
+LOOPS
+  for () is self-explanatory.
+
+
+
+    counties = ["fermanagh", "antrim", "down", "armagh", "(london)derry", "tyrone", "cavan", "carlow", "clare", "cork", "donegal", "dublin", "galway", "kerry", "kildare", "kilkenny", "laois", "lietrim", "limerick", "longford", "louth", "mayo", "meath", "monaghan", "offaly", "roscommon", "sligo", "tipperary", "waterford", "wexford", "westmeath", "wicklow"]
+
+    // NOTE with a for in, the order of keys is not always sequential.
+    // If you need sequential ordering, then use a plain for loop.
+    for (let c in counties) {
+      console.log(`County ${c} is ${counties[c]}.`)
+    }
+
+    // To just output the values without the indices, use FOR OF.
+    // This works with objects or arrays.
+    for (let county of counties) {
+      console.log(county)
+    }
+
+
